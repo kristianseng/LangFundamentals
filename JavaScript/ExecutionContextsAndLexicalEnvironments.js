@@ -20,7 +20,7 @@
 
 // all variables and functions created globally are attached to window object!
 
-
+ 
 
 // outer environment
 
