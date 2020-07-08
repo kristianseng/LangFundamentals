@@ -87,6 +87,7 @@ greet(); // Hello undefined
 var libraryName = "lib 2";
 // files should not collide with each other, becouse all js files are treathed as 1 stack ==> variables can be overwritten
 
+
 window.libraryName = window.libraryName || "Lib 2";
 
 // if it is set we do not change it
