@@ -1,0 +1,284 @@
+// function statement
+
+fucntion greet(name) {
+	conole.log('hello '+ name);
+}
+
+we have to invoke it to execute
+
+greet('John');
+
+// function expression
+
+var greetFunc = function(name) {
+	console.log('Hello ' + name);
+};
+
+greetFunc('John');
+
+// function to a variable.
+// special property for function ( object) --> code property
+
+// we can invoke on the fly!
+
+// immediately invoked function expression (IIFE)
+
+var greeting = function(name) {
+	console.log('Hello ' + name);
+}();
+
+
+//// without immediately invoking////////////////
+console.log(greeting); // console logs a function
+console.log(greeting('John'));
+////////////////////////////////////////////////
+
+//// with immediately invoking//////////////////
+
+return --> set equal to greeting
+// hello undefined //////////////////////////////
+//// but we can pass the variable as well ///////
+
+var greeting = function(name) {
+        return ('Hello ' + name);
+}('John');
+console.log(greeting);   --->> greeting now holds a string not the function !
+console.log(greeting()); --> error here --> string is not a function
+
+3;
+
+"I am a string";
+
+{
+	name:'John'
+};
+
+funtion(name) {
+	return 'hello '+ name;
+}
+
+--->error  ---> it wants it to have a name
+--> fool the engine --> function is not the first word  --> brackets are!!
+
+(function(name) {
+	return 'Hello ' + name;
+});
+
+// now function thinks its an expression ---> no errors
+// doing nothing, not using it
+
+
+(function(name) {
+
+	var greeting = 'Hello';
+	console.log(greeting + '' +name);
+}());
+
+// it lays there --> it does nothing but it can be immediately invoked;
+
+
+
+(function(name) {
+
+	var greeting = 'Inside IIFE: Hello';
+	console.log(greeting + ' ' + name);
+}(firstname));
+ // classic example of IIFE
+// wonderful tool!
+// executing code on a fly
+
+// invoking () can be before and after last bracket --> no right way
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+// Framework aside --> IIFES and safe code
+
+why IIFE's so useful
+
+/ function statement
+
+fucntion greet(name) {
+	conole.log('hello '+ name);
+}
+
+we have to invoke it to execute
+
+greet('John');
+
+// function expression
+
+var greetFunc = function(name) {
+	console.log('Hello ' + name);
+};
+
+greetFunc('John');
+
+// function to a variable.
+// special property for function ( object) --> code property
+
+// we can invoke on the fly!
+
+// immediately invoked function expression (IIFE)
+
+var greeting = function(name) {
+	console.log('Hello ' + name);
+}();
+
+
+//// without immediately invoking////////////////
+console.log(greeting); // console logs a function
+console.log(greeting('John'));
+////////////////////////////////////////////////
+
+//// with immediately invoking//////////////////
+
+return --> set equal to greeting
+// hello undefined //////////////////////////////
+//// but we can pass the variable as well ///////
+
+var greeting = function(name) {
+        return ('Hello ' + name);
+}('John');
+console.log(greeting);   --->> greeting now holds a string not the function !
+console.log(greeting()); --> error here --> string is not a function
+
+3;
+
+"I am a string";
+
+{
+	name:'John'
+};
+
+funtion(name) {
+	return 'hello '+ name;
+}
+
+--->error  ---> it wants it to have a name
+--> fool the engine --> function is not the first word  --> brackets are!!
+
+(function(name) {
+	return 'Hello ' + name;
+});
+
+// now function thinks its an expression ---> no errors
+// doing nothing, not using it
+
+
+(function(name) {
+
+	var greeting = 'Hello';
+	console.log(greeting + '' +name);
+}());
+
+// it lays there --> it does nothing but it can be immediately invoked;
+
+
+
+(function(name) {
+
+	var greeting = 'Inside IIFE: Hello';
+	console.log(greeting + ' ' + name);
+}(firstname));
+ // classic example of IIFE
+// wonderful tool!
+// executing code on a fly
+
+mu// invoking () can be before and after last bracket --> no right wa
+
+// Framework aside --> IIFES and safe code
+
+why IIFE's so useful
+// invoking () can be before and after last bracket --> no right wa
+
+// Framework aside --> IIFES and safe code
+
+why IIFE's so useful
+// invoking () can be before and after last bracket --> no right wa
+
+// Framework aside --> IIFES and safe code
+
+why IIFE's so useful
+// invoking () can be before and after last bracket --> no right wa
+
+// Framework aside --> IIFES and safe code
+
+why IIFE's so useful
+// invoking () can be before and after last bracket --> no right wa
+
+// Framework aside --> IIFES and safe code
+
+why IIFE's so useful
+// invoking () can be before and after last bracket --> no right wa
+
+// Framework aside --> IIFES and safe code
+
+why IIFE's so useful
+// invoking () can be before and after last bracket --> no right wa
+
+// Framework aside --> IIFES and safe code
+
+why IIFE's so useful
+
+
+// IIFE
+
+(function(name) {
+
+	var greeting = 'hello';
+	console.log(greeting + ' ' + name);
+
+}('John')); 
+
+// execution stack
+
+first loaded --> global execution context
+
+--> nothing in it no variables or functions hoisted
+
+hits the line --> object that has code in it, sees invoking (new execution context, code is runed)
+own execution context (does not touch global object)
+
+var greeting = 'Hola';
+
+// there is no collison --> becouse we dont save variables globally at all
+
+
+// affecting global object on purpose
+
+(function(global, name) {
+
+	var greeting = 'hello';
+	global.greeting = 'hello';
+	console.log(greeting + ' ' + name);
+
+}(window, 'John')); // IIFE
+
+console.log(greeting);
+
+
+// Understanding closures
+
+function greet(whattosay) {
+
+	return function(name) {
+		console.log(whattosay + ' ' + name
+	}
+
+}
+
+greet('Hi')('Tony');
+
+// Hi Tony
+
+var sayHi = greet('Hi');
+sayHi('Tony');
+
+// still Hi Tony
+// How?
+
+// code starts global execution context --> greet execution context
+---> greet execution context is poped of the stack but space in memory for
+ variables is hanging around
+--> when sayhi is invoked it still has reference to its outer environment.
