@@ -1,15 +1,10 @@
 :shipit:
 
-Javascript language
-
-js files with notes for each topic
-
 From courses: 
 - Udemy JavaScript Understanding the Weird Parts
 - Udemy Modern JavaScript (from Novice to Ninja)
 
-
-
+Topics covered:
 **1. Execution Context and Lexical Environments**
 
 1. Syntax Parsers, Execution Contexts and Lexical Envornments
@@ -104,7 +99,7 @@ From courses:
 
 22. Functional Programming - Part 2
 
-**4. Object-Oriented Javascropt and Prototypal Inheritance
+**4. Object-Oriented Javascropt and Prototypal Inheritance**
 
 1. Conceptual Aside: Classical vs Prototypal Inheritance
 
@@ -114,7 +109,7 @@ From courses:
 
 4. Reflection and Extend
 
-**5. Building Objects
+**5. Building Objects**
 
 1. Function Constructors, 'new', and the History of Javascript
 
@@ -132,7 +127,7 @@ From courses:
  
 8. ES6 and Classes
 
-**6. Odds and Ends
+**6. Odds and Ends**
 
 1. Initialization
 
@@ -140,7 +135,7 @@ From courses:
 
 3. Strict Mode
 
-**7. Examining Famous Frameworks and Libraries
+**7. Examining Famous Frameworks and Libraries**
 
 1. Learning From Other's Good Code
 
@@ -150,7 +145,7 @@ From courses:
 
 4. Deep Dive into Source Code: jQuery - Part 3
 
-**Let's Build a Framework / Library!
+**8. Let's Build a Framework / Library!**
 
 1. Requirements
   
