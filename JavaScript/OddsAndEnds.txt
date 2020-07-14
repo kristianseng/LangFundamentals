@@ -1,0 +1,76 @@
+Initialization
+
+var people = [
+    {
+        firstname:'John',
+        lastname: 'Doe',
+        adresses: [
+            '111 Main St.',
+            '222 Third St.'
+        ]
+    },
+    {
+        firstname: 'Jane',
+        lastname: 'Doe',
+        addresses: [
+            '333 Main St.',
+            '444 Fifth St.'
+        ],
+        greet: function() {
+            return 'Hello';
+        }
+    }
+]
+
+console.log(people);
+
+
+Typeof, instanceof and figuring out what something instanceof
+
+var a = 3;
+console.log(typeof a);
+
+var b = "Hello";
+console.log(typeof b);
+
+var c = {};
+console.log(typeof c);
+
+var d = [];
+console.log(typeof d); ===> object // weird!
+console.log(Object.prototype.toString.call(d)); // better! ==> object Array
+
+function Person(name) {
+    this.name = name;
+}
+
+var e = new Person('Jane');
+console.log(typeof e);  ==> return object 
+console.log(e instanceof Person);
+
+console.log(typeof undefined); // makes sense
+console.log(typeof null); // a bug since, like, forever... ==> object
+
+var z = function() { };
+console.log(typeof z); ==> function
+
+
+Strict Mode
+
+var person;
+
+persom = {};
+console.log(persom);
+
+two objects created! 
+
+"user strict";
+
+var person;
+
+persom = {};
+console.log(persom);
+
+persom not defined!
+
+
