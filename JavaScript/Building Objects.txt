@@ -1,0 +1,183 @@
+1. Function Constructors, 'new', and the History of Javascript
+
+var john = new Person(); ==> marketing, making objects like in Java
+
+function Person() => {
+    this.firstname = 'John',
+    this.lastname = 'Doe';
+}
+
+var john = new Person();
+console.log(john);
+
+new ==> empty object ==> calls function
+creating object via function
+
+function Person(firstname, lastname) => {
+    this.firstname = firstname,
+    this.lastname = lastname;
+}
+
+var john = new Person('John', 'Doe');
+console.log(john);
+var john = new Person('Jane', 'Doe');
+console.log(jane);
+
+
+
+// function constructor: a normal function that is used to construct objects
+
+2. Function Constructors and '.prototype'
+
+function (special type of an object) ==> code, name, prototype
+prototype, it sits there and waiting for keyword new
+
+function Person(firstname, lastname) => {
+    this.firstname = firstname,
+    this.lastname = lastname;
+}
+
+Person.prototype.getFullName = function() {
+    return this.firstname + ' ' + this.lastname;
+}
+
+var john = new Person('John', 'Doe');
+console.log(john);
+var john = new Person('Jane', 'Doe');
+console.log(jane);
+
+Person.prototype.getFormalFullName = function() {
+    return this.lastname + ' ' + this.firstname;
+}
+
+===> we can add features later that works on all the objects created!!
+
+// good practice to add methods this way (proto), 1 copy to use ==> not adding them to every object ==> takes up memory space
+
+
+3. Dangerous Aside 'new' and functions
+
+var john = new Person('John', 'Doe');
+var john = Person('John', 'Doe'); ==> if you forget new ==> var is undefined ==> methods on it throws error
+
+suggestion ==> Person capitalizaed and get used to syntax
+
+
+4. Conceptual Aside Built-In Function Constructors
+
+var a = new Number(3);
+its an object, added primitibe value
+Number.prototype.
+String.prototype.
+
+var a = new Number("3");
+
+// Looks like you are creating primitives but you are creating objects !!
+
+Date.prototype.
+
+useful, we can add methods for all strings, all numbers etc. ==> prototypes
+
+String.prototype.isLengthGreatherThan = function(limit) {
+    return this.lenght > limit;
+}
+
+console.log("John".isLengthGreatherThan(3));
+
+
+
+Number.prototype.isPositive = function() {
+    return this > 0;
+}
+
+3. isPositive() ==> will not convert number to object automatically !!!!!
+
+with stirngs and arrays it will
+
+5. Dangerous Aside Built-In Function Constructors
+
+var a =3
+var b = new Number(3)
+
+a == b true
+a === b false
+
+better not to use built-in Constructors
+
+for dates, 
+momentjs ==> better than build-in constructors
+
+var c = Number("3")
+// not an object/ can be useful
+
+
+6. Dangerous Aside Arrays and for..in
+
+Array.prototype.myCustomFeature = 'cool';
+
+var arr = ['John', 'Jane', 'Jim'];
+
+for (var prop in arr) {
+    console.log(prop + ': ' + arr[prop]);
+} 
+
+// You can ittereate into a prototypes. dont use for in with arrays!
+
+
+7. Object.create =====> Pure Prototypal Inheritance
+
+var person = {
+    firstname: 'Default',
+    lastname: 'Default',
+    greet: function() {
+        return 'Hi ' + this.firstname;
+    }
+}
+
+var john = Object.create(person);
+console.log(john);
+
+john.firstname = 'John';
+john.lastname = 'Doe';
+console.log('John');
+
+// Polyfill -> code that adds a fearture which the engine may lack
+
+
+8. ES6 and Classes
+
+class Person {
+
+
+    constructor(firstname, lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
+    greet() {
+        return 'Hi ' + firstname;
+    }
+}
+
+var john = new Person('John', 'Doe');
+
+// other than other languages ===> class Person is an object
+// definetly better than function constructors ==> less silly things
+
+
+
+               // extends here sets the Prototype (__proto__)
+                // super will call the constructor of the object that is the prototype
+class InformalPerson extends Person {
+    constructor(firstname, lastname) {
+        super(firstname, lastname);
+    }
+
+    greet() {
+        return 'Yo ' + firstname
+    }
+}
+
+// This is syntactic sugar ==> different way to type something that doesnt change how it wordks under the hood
+
+// still prototypical Inheritance!!
