@@ -1,0 +1,79 @@
+ReactDOM.render(React.createElement("h1", null, "Our Amazing App Header"), document.querySelector("#app"));
+///
+
+function OurApp() {
+  return React.createElement("h1", null, "Our Amazing App Header")
+}
+
+
+ReactDOM.render(React.createElement(OurApp), document.querySelector("#app"));
+
+/// More organazied
+
+function OurApp() {
+  return React.createElement("div", null, [
+    React.createElement("h1", null, "Our Amazing App Header"),
+    React.createElement("p", null, `The current time is ${new Date().toLocaleString()}`),
+    React.createElement("small", null, "Copyright Footer Text")
+  ])
+}
+
+ReactDOM.render(React.createElement(OurApp), document.querySelector("#app"));
+
+// Add refreash for date
+
+setInterval(()=> {ReactDOM.render(React.createElement(OurApp), document.querySelector("#app"))}, 1000);
+
+//
+
+// Note ==> App is just refreashing the element of date. Great for performance!!
+
+////// JSX! (Babel)
+
+function OurApp() {
+ return (
+  <div>
+     <h1 className="special">Our Amazing App Header</h1>
+     <p>The current time is {new Date().toLocaleString()}.</p>
+     <small>Copyright Footer Text</small>
+  </div>
+ 
+ )
+}
+
+setInterval(()=> {
+  ReactDOM.render(<OurApp />, document.querySelector("#app"))
+}, 1000);
+
+
+// Restructure ---> components using other components
+
+function OurApp() {
+ return (
+  <div>
+     <OurHeader />
+     <TimeArea />
+     <Footer />
+  </div>
+ 
+ )
+}
+
+function OurHeader() {
+  return <h1 className="special">Our amazing header</h1>;
+}
+
+function TimeArea() {
+  return <p>The current time is {new Date().toLocaleString()}.</p>;
+}
+
+
+function Footer() {
+  return <small>Copyright Footer Text</small>;
+}
+
+
+setInterval(()=> {
+  ReactDOM.render(<OurApp />, document.querySelector("#app"));
+}, 1000);
+
