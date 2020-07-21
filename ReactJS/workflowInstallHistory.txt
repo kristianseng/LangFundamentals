@@ -1,0 +1,28 @@
+
+    5  npm --version
+    6  npm init -y
+    7  npm install react react-dom
+    8  npm install webpack webpack-cli webpack-dev-server
+    9  npm install @babel/core @babel/presetenv @babel/preset-react babel-loader
+   10  npm install @babel/core @babel/preset-env @babel/preset-react babel-loader
+   11  npm run dev
+ 
+   13  npm install webpack-dev-server -g
+   
+   15  npm run webpack-dev-server
+   16  npm webpack-dev-server
+   17  npm start
+
+   20  npm install
+   21  npm init
+
+   29  npm cache clean --force
+
+   32  history
+   
+   33  npm install webpack-dev-server --save-dev
+
+   35  npm install --save-dev webpack
+
+   37  npm install --save-dev webpack-cli
+   38  npm run dev
