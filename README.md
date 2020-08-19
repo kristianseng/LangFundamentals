@@ -15,7 +15,7 @@ Angular growing relatively slow
 Vue is hugely driven by open-source community
 
 
-Migrations:
+Migrations:. Dsa
 
 - for Angular ==> regular major updates planned every 6 months,
 
@@ -38,4 +38,4 @@ most loved frameworks
 57% facfaangular.js
 
 https://medium.com/techmagic/reactjs-vs-angular5-vs-vue-js-what-to-choose-in-2018-b91e028fa91d -- pros and cons
-
+A
