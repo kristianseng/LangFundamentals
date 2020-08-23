@@ -15,7 +15,7 @@ Angular growing relatively slow
 Vue is hugely driven by open-source community
 
 
-Migrations:. Dsa
+Migrations:
 
 - for Angular ==> regular major updates planned every 6 months,
 
